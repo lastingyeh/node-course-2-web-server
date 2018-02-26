@@ -66,19 +66,21 @@
 
   [Forecast io. : https://darksky.net](https://darksky.net/forecast)
 
-#### git 
+#### git Initialize
 
-    git init
+    > git init
 
-    git status (see Untracked files:)
+    > git status -> see files Status
 
-    git add package.json (add file to git )
+    > git add package.json -> add files to git
 
-    git commit -m 'update message you defined'
+    > git commit -m 'update message you defined' -> commit to git
+
+    > git push -> * push files to git
 
 #### ssh github
 
-1.Terminal
+1.Terminal Create SSH Keys
 
     ls -al ~/.ssh -> show ssh key info
 
@@ -96,17 +98,17 @@
 
     2.2 create new ssh key
 
-    2.1 pbcopy < ~/.ssh/id_rsa.pub -> (terminal)
+    2.1 > pbcopy < ~/.ssh/id_rsa.pub -> generate key
 
-    2.2 paste to 'key' content 
+    2.2 paste to 'key' content after run above command
 
-    2.3 ssh -T git@github.com -> view git account for use
+    2.3 > ssh -T git@github.com -> view git account for use
 
 3.create repos
 
-  [back to index page](https://github.com/)
-
     3.1 create New repository
+
+  [GitHub Index Page](https://github.com/)
 
     3.2 owner / 'press repository name' > create
 
@@ -116,19 +118,19 @@
     
       git push -u origin master
 
-4.heroku
-
-  [Heroku Login](https://dashboard.heroku.com/)
+4.Heroku Settings
 
     4.1 Heroku website
 
-  [Download toolbelt with CLI](https://blog.heroku.com/the_heroku_toolbelt)
+  [Heroku Login](https://dashboard.heroku.com/)
 
     4.2 Toolbelt Install
 
-    4.3 > heroku --help
+  [Download toolbelt with CLI](https://blog.heroku.com/the_heroku_toolbelt)
 
-    4.4 > heroku login 
+    4.3 See Helper > heroku --help
+
+    4.4 login Heroku > heroku login 
 
     4.5 add keys to heroku > heroku keys:add
 
