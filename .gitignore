@@ -1,0 +1,6 @@
+node_modules/
+app/
+docs/
+weather-app/
+server.log
+yarn.lock
