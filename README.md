@@ -137,3 +137,7 @@
     check keys existed > heroku keys
 
     > ssh -v git@heroku.com
+
+    > heroku create
+
+    > git push heroku
