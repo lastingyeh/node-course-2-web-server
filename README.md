@@ -5,20 +5,22 @@
     1. 用物件字面文字定義物件時，物件中的方法
 
     因為箭頭函式會以物件在定義時的捕捉到的週邊this為預設this，也就是window或全域物件(或是在嚴格模式的undefined)。所以會造成是存取不到物件中的array屬性值。
-
+  ``` javascript
       const calculate = {
         array: [1, 2, 3],
         sum: () => {
           return this.array.reduce((result, item) => result + item)
         }
       }
+  
 
     //錯誤: TypeError: Cannot read property 'array' of undefined
 
     calculate.sum()
+  ```
     在物件的prototype屬性中定義的方法
     這種情況與上面一點類似，箭頭函式的this值這時會是window或全域物件(或是在嚴格模式的undefined)。
-
+  ``` javascript
       function MyCat(name) {
         this.catName = name
       }
@@ -30,28 +32,33 @@
       cat = new MyCat('Mew')
 
       cat.sayCatName() // undefined
-
+  ```
     2. DOM事件處理的監聽者(事件處理函式)
 
     箭頭函式的this值，相當於window或全域物件(或是在嚴格模式的undefined)。這裡的this值如果用一般函式定義的寫法，正確應該是要對應到被監聽DOM元素本身。
 
+  ``` javascript
       const button = document.getElementById('myButton')
 
       button.addEventListener('click', () => {
         this.innerHTML = 'Clicked button'
       })
+  ```
 
     3. 建構函式
     
     箭頭函式沒有constructor這個設計(原本的函式中有)，直接使用new運算符時會拋出例外產生錯誤。
 
+  ``` javascript
       const Message = (text) => {
         this.text = text
       }
+  
 
     // 錯誤 Throws "TypeError: Message is not a constructor"
 
     const helloMessage = new Message('Hello World!');
+  ```
 
     4. 其他注意的限制或陷阱
 
@@ -141,3 +148,6 @@
     > heroku create
 
     > git push heroku
+
+##### thanks for references
+  [Resource and note refs by Andrew Mead](https://github.com/andrewjmead)
