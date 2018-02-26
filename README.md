@@ -1,4 +1,4 @@
-#### arrow function 使用
+### arrow function 使用
 
   不可使用箭頭函式的情況
   
@@ -62,78 +62,78 @@
 
 [以上資料 參考 ES6 篇 - Arrow Function(箭頭函式)](https://ithelp.ithome.com.tw/articles/10185221) 
 
-#### Weather API website
+### Weather API website
 
   [Forecast io. : https://darksky.net](https://darksky.net/forecast)
 
 #### git Initialize
 
-> git init
+    > git init
 
-> git status -> see files Status
+    > git status -> see files Status
 
-> git add package.json -> add files to git
+    > git add package.json -> add files to git
 
-> git commit -m 'update message you defined' -> commit to git
+    > git commit -m 'update message you defined' -> commit to git
 
-> git push -> * push files to git
+    > git push -> * push files to git
 
 #### ssh github
 
-1.Terminal Create SSH Keys
+##### Terminal Create SSH Keys
 
-  1.1 ls -al ~/.ssh -> show ssh key info
+    ls -al ~/.ssh -> show ssh key info
 
-  1.2 ssh-keygen -t rsa -b 4096 -C 'your mail address' -> sign ssh keys
+    ssh-keygen -t rsa -b 4096 -C 'your mail address' -> sign ssh keys
 
-  1.3 eval "$(ssh-agent -s)" -> show agent pid
+    eval "$(ssh-agent -s)" -> show agent pid
 
-  1.4 ssh-add ~/.ssh/id_rsa -> Identity added: /Users/xxx/.ssh/id_rsa (/Users/xxx/.ssh/id_rsa)
+    ssh-add ~/.ssh/id_rsa -> Identity added: /Users/xxx/.ssh/id_rsa (/Users/xxx/.ssh/id_rsa)
 
-2.Login to your github account
+##### Login to your github account
 
   [Adding a new SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
 
-  2.1 go to https://github.com/settings/keys
+    go to https://github.com/settings/keys
 
-  2.2 create new ssh key
+    create new ssh key
 
-  2.1 > pbcopy < ~/.ssh/id_rsa.pub -> generate key
+    > pbcopy < ~/.ssh/id_rsa.pub -> generate key
 
-  2.2 paste to 'key' content after run above command
+    paste to 'key' content after run above command
 
-  2.3 > ssh -T git@github.com -> view git account for use
+    > ssh -T git@github.com -> view git account for use
 
-3.create repos
+##### create repos
 
-  3.1 create New repository
+    create New repository
 
   [GitHub Index Page](https://github.com/)
 
-  3.2 owner / 'press repository name' > create
+    owner / 'press repository name' > create
 
-  3.3 …or push an existing repository from the command line
+    …or push an existing repository from the command line
 
-    git remote add origin https://github.com/xxx/your-project.git
-  
-    git push -u origin master
+      git remote add origin https://github.com/xxx/your-project.git
+    
+      git push -u origin master
 
-4.Heroku Settings
+##### Heroku Settings
 
-  4.1 Heroku Website
-  
+    Heroku Website
+    
   [Heroku Login](https://dashboard.heroku.com/)
 
-  4.2 Toolbelt Install
+    Toolbelt Install
 
   [Download toolbelt with CLI](https://blog.heroku.com/the_heroku_toolbelt)
 
-  4.3 See Helper > heroku --help
+    See Helper > heroku --help
 
-  4.4 login Heroku > heroku login 
+    login Heroku > heroku login 
 
-  4.5 add keys to heroku > heroku keys:add
+    add keys to heroku > heroku keys:add
 
-  4.6 check keys existed > heroku keys
+    check keys existed > heroku keys
 
-  4.7 > ssh -v git@heroku.com
+    > ssh -v git@heroku.com
