@@ -73,7 +73,7 @@
 
   [Forecast io. : https://darksky.net](https://darksky.net/forecast)
 
-#### git Initialize
+### git Initialize
 
     > git init
 
@@ -85,9 +85,9 @@
 
     > git push -> * push files to git
 
-#### ssh github
+### ssh github
 
-##### Terminal Create SSH Keys
+#### Terminal Create SSH Keys
 
     ls -al ~/.ssh -> show ssh key info
 
@@ -97,7 +97,7 @@
 
     ssh-add ~/.ssh/id_rsa -> Identity added: /Users/xxx/.ssh/id_rsa (/Users/xxx/.ssh/id_rsa)
 
-##### Login to your github account
+#### Login to your github account
 
   [Adding a new SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
 
@@ -111,7 +111,7 @@
 
     > ssh -T git@github.com -> view git account for use
 
-##### create repos
+#### create repos
 
     create New repository
 
@@ -125,7 +125,7 @@
     
       git push -u origin master
 
-##### Heroku Settings
+#### Heroku Settings
 
     Heroku Website
     
@@ -149,5 +149,17 @@
 
     > git push heroku
 
-##### thanks for references
+### MongoDB
+
+#### local run mongodb
+
+    > mongod --dbpath ~/[mongo-data] > start db service
+
+    > mongo > entry to db
+
+##### use mongodb for npm
+
+  see /node-todo-api/playground
+
+### thanks for references
   [Resource and note refs by Andrew Mead](https://github.com/andrewjmead)
