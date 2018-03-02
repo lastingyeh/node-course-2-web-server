@@ -157,9 +157,33 @@
 
     > mongo > entry to db
 
-##### use mongodb for npm
+#### MongoDB Native Notes
 
-  see /node-todo-api/playground
+##### see /node-todo-api/playground
+
+1. connection DB (mongodb-db.js)
+
+  use async/await to generate promise connection
+
+2. insert (mongodb-insert.js)
+
+  async/await with callback func to create doc
+
+3. find
+
+  find() & findOne({...}) & findOne({_id:new ObjectId('xxx')})
+
+4. delete
+
+  deleteMany() & deleteOne() & findOneAndDelete()
+
+  [Delete Refs](https://stackoverflow.com/questions/42715591/mongodb-difference-remove-vs-findoneanddelete-vs-deleteone)
+
+5. update
+
+  findOneAndUpdate & $inc, $set used.
+
+
 
 ### thanks for references
   [Resource and note refs by Andrew Mead](https://github.com/andrewjmead)
