@@ -183,6 +183,9 @@
 
     findOneAndUpdate & $inc, $set used.
 
+#### Mongoose Model
+
+
 
 ### thanks for references by
   [Andrew Mead GitHub](https://github.com/andrewjmead)
