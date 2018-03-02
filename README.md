@@ -161,29 +161,28 @@
 
 ##### see /node-todo-api/playground
 
-1. connection DB (mongodb-db.js)
+1.connection DB (mongodb-db.js)
 
-  use async/await to generate promise connection
+    use async/await to generate promise connection
 
-2. insert (mongodb-insert.js)
+2.insert (mongodb-insert.js)
 
-  async/await with callback func to create doc
+    async/await with callback func to create doc
 
-3. find
+3.find
 
-  find() & findOne({...}) & findOne({_id:new ObjectId('xxx')})
+    find() & findOne({...}) & findOne({_id:new ObjectId('xxx')})
 
-4. delete
+4.delete
 
-  deleteMany() & deleteOne() & findOneAndDelete()
+    deleteMany() & deleteOne() & findOneAndDelete()
 
   [Delete Refs](https://stackoverflow.com/questions/42715591/mongodb-difference-remove-vs-findoneanddelete-vs-deleteone)
 
-5. update
+5.update
 
-  findOneAndUpdate & $inc, $set used.
+    findOneAndUpdate & $inc, $set used.
 
 
-
-### thanks for references
-  [Resource and note refs by Andrew Mead](https://github.com/andrewjmead)
+### thanks for references by
+  [Andrew Mead GitHub](https://github.com/andrewjmead)
