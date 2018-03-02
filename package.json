@@ -9,7 +9,9 @@
 		"test": "mocha node-tests/**/*.test.js",
 		"test-watch": "nodemon --exec \"npm test\"",
 		"node-test": "node node-tests/server/server.js",
-		"node-todo": "nodemon node-todo-api/server/server.js"
+		"node-todo": "nodemon node-todo-api/server/server.js",
+		"test-todo":"mocha node-todo-api/**/*.test.js",
+		"test-todo-watch":"nodemon --exec \"npm run test-todo\""
 	},
 	"keywords": [],
 	"author": "",
