@@ -1,9 +1,7 @@
 const { ObjectId } = require('mongodb');
-const connectPromise = require('./mongodb-db');
+const { connectPromise, DB_NAME } = require('./mongodb-db');
 
-const dbName = 'TodoApp';
-
-async function findData(dbName, collectionName, opts, callback) {
+async function findData(collectionName, opts, callback) {
 	let client = null;
 
 	try {
@@ -17,7 +15,9 @@ async function findData(dbName, collectionName, opts, callback) {
 			done = callback;
 		}
 
-		const db = await connectPromise(dbName);
+		client = await connectPromise();
+
+		const db = client.db(DB_NAME);
 
 		const results = await db
 			.collection(collectionName)
@@ -38,7 +38,7 @@ async function findData(dbName, collectionName, opts, callback) {
 }
 
 // get todos by opts
-findData(dbName, 'Todos', { completed: false }, (error, results) => {
+findData('Todos', { completed: false }, (error, results) => {
 	if (error) {
 		console.log(error);
 	} else {
@@ -47,7 +47,7 @@ findData(dbName, 'Todos', { completed: false }, (error, results) => {
 });
 
 // get all users
-findData(dbName, 'Users', (error, results) => {
+findData('Users', (error, results) => {
 	if (error) {
 		console.log(error);
 	} else {
@@ -57,7 +57,6 @@ findData(dbName, 'Users', (error, results) => {
 
 // get user by objectId
 findData(
-	dbName,
 	'Users',
 	{ _id: new ObjectId('5a9798558d4f4c3455045291') },
 	(error, results) => {

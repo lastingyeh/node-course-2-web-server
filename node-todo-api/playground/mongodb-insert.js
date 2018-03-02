@@ -1,4 +1,4 @@
-const connectPromise = require('./mongodb-db');
+const { connectPromise, DB_NAME } = require('./mongodb-db');
 
 //#region use callback pattern
 // MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
@@ -27,12 +27,13 @@ const connectPromise = require('./mongodb-db');
 //     client.close();
 // });
 //#endregion
-const dbName = 'TodoApp';
 
-async function insertData(dbName, collectionName, createObject, callback) {
+async function insertData(collectionName, createObject, callback) {
 	let client = null;
 	try {
-		const db = await connectPromise(dbName);
+		client = await connectPromise();
+
+		const db = client.db(DB_NAME);
 
 		const result = await db.collection(collectionName).insertOne(createObject);
 
@@ -53,13 +54,13 @@ const userObject = {
 };
 
 // insert Users-data
-insertData(dbName, 'Users', userObject, (error, result) => {
-	if (error) {
-		console.log(error);
-	} else {
-		console.log(result);
-	}
-});
+// insertData('Users', userObject, (error, result) => {
+// 	if (error) {
+// 		console.log(error);
+// 	} else {
+// 		console.log(result);
+// 	}
+// });
 
 const todoObject = {
 	text: 'Just to do',
@@ -67,7 +68,7 @@ const todoObject = {
 };
 
 // insert Todos-data
-insertData(dbName, 'Todos', todoObject, (error, result) => {
+insertData('Todos', todoObject, (error, result) => {
 	if (error) {
 		console.log(error);
 	} else {
