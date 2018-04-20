@@ -153,9 +153,13 @@
 
 #### local run mongodb
 
-    > mongod --dbpath ~/[mongo-data] > start db service
+1.start db service
 
-    > mongo > entry to db
+    > mongod --dbpath ~/[mongo-data] 
+
+2.entry to db
+
+    > mongo
 
 #### MongoDB Native Notes
 
