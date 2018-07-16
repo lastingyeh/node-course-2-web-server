@@ -1,8 +1,8 @@
-const { ObjectId } = require('mongodb');
+const { ObjectID } = require('mongodb');
 const { connectPromise, DB_NAME } = require('./mongodb-db');
 
 async function updateData(collectionName, opts, callback) {
-	let client = null;
+	let client;
 
 	try {
 		client = await connectPromise();
@@ -21,13 +21,9 @@ async function updateData(collectionName, opts, callback) {
 }
 
 const todoOpts = {
-	where: { _id: new ObjectId('5a98a1066385c00ab5f4de56') },
-	updateSet: {
-		$set: {
-			text: 'update info'
-		}
-	},
-	extra: { returnOriginal: false }
+	where: { _id: new ObjectID('5a98a1066385c00ab5f4de56') },
+	updateSet: { $set: { text: 'update info' } },
+	extra: { returnOriginal: false },
 };
 
 updateData('Todos', todoOpts, (error, result) => {
@@ -39,9 +35,9 @@ updateData('Todos', todoOpts, (error, result) => {
 });
 
 const userOpts = {
-	where: { _id: new ObjectId('5a97a5cc9b7d223eeafeeffc') },
+	where: { _id: new ObjectID('5a97a5cc9b7d223eeafeeffc') },
 	updateSet: { $set: { name: 'Chris' }, $inc: { age: 1 } },
-	extra: { returnOriginal: false }
+	extra: { returnOriginal: false },
 };
 
 updateData('Users', userOpts, (error, result) => {

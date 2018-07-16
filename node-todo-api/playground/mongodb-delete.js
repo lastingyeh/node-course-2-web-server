@@ -1,6 +1,7 @@
 const { connectPromise, DB_NAME } = require('./mongodb-db');
 
 async function deleteData(collectionName, opts, callback) {
+	let client;
 	try {
 		client = await connectPromise();
 
@@ -13,11 +14,15 @@ async function deleteData(collectionName, opts, callback) {
 		// const result = await db.collection(collectionName).deleteOne(opts);
 
 		// findOneAndDelete, as result has pop the deleted document
-		const result = await db.collection(collectionName).findOneAndDelete(opts)
+		const result = await db
+			.collection(collectionName)
+			.findOneAndDelete(opts);
 
 		callback(null, JSON.stringify(result, undefined, 2));
 	} catch (error) {
 		callback(error.message);
+	} finally {
+		client && client.close();
 	}
 }
 
