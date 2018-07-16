@@ -5,9 +5,12 @@
 	"main": "index.js",
 	"scripts": {
 		"node-hbs": "nodemon index.js -e js,hbs",
-		"start": "nodemon index.js",
+		"start": "node index.js",
 		"test": "mocha node-todo-api/server/**/*.test.js",
 		"test-watch": "nodemon --exec \"npm test\""
+	},
+	"engines": {
+		"node": "8.11.2"
 	},
 	"keywords": [],
 	"author": "",
