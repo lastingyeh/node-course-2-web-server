@@ -8,7 +8,7 @@ const { ObjectId } = require('mongoose').Types;
 require('./db/mongoose');
 
 const Todo = require('./models/todo');
-const User = require('./models/user').default;
+const User = require('./models/user');
 
 const app = express();
 
@@ -106,6 +106,9 @@ app.patch('/todos/:id', (req, res) => {
 		})
 		.catch(e => res.status(400).send());
 });
+
+// POST /users
+
 
 const port = process.env.PORT || 3000;
 
