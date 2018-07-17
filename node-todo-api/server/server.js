@@ -1,3 +1,5 @@
+require('./config/config');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const _ = require('lodash');
@@ -104,8 +106,6 @@ app.patch('/todos/:id', (req, res) => {
 		})
 		.catch(e => res.status(400).send());
 });
-
-const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
 	console.log(`Started on port ${port}`);
