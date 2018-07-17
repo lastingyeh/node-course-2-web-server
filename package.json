@@ -6,8 +6,10 @@
 	"scripts": {
 		"node-hbs": "nodemon index.js -e js,hbs",
 		"start": "node index.js",
+		"dev":"nodemon index.js",
 		"test": "mocha node-todo-api/server/**/*.test.js",
-		"test-watch": "nodemon --exec \"npm test\""
+		"test-watch": "nodemon --exec \"npm test\"",
+		"debug": "nodemon --nolazy --inspect-brk=9229 index.js"
 	},
 	"engines": {
 		"node": "8.11.2"
@@ -20,7 +22,7 @@
 		"body-parser": "^1.18.2",
 		"express": "^4.16.2",
 		"hbs": "^4.0.1",
-		"lodash": "^4.17.5",
+		"lodash": "^4.17.10",
 		"mongodb": "^3.0.3",
 		"mongoose": "^5.0.7",
 		"request": "^2.83.0",
