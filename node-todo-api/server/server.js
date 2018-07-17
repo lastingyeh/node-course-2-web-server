@@ -107,7 +107,7 @@ app.patch('/todos/:id', (req, res) => {
 		.catch(e => res.status(400).send());
 });
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 3000, () => {
 	console.log(`Started on port ${port}`);
 });
 
