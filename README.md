@@ -1,4 +1,4 @@
-### arrow function 使用
+### PART I arrow function 使用
 
   不可使用箭頭函式的情況
   
@@ -69,11 +69,11 @@
 
 [以上資料 參考 ES6 篇 - Arrow Function(箭頭函式)](https://ithelp.ithome.com.tw/articles/10185221) 
 
-### Weather API website
+### PART II Weather API website
 
   [Forecast io. : https://darksky.net](https://darksky.net/forecast)
 
-### Use Git
+### PART III Use Git
 
   git init to project
 
@@ -95,7 +95,7 @@
 
     $ git push
 
-### SSH Created By Github
+### PART IV SSH Created By Github
 
   show ssh key info
 
@@ -138,7 +138,6 @@
     $ git push -u origin master
 
 #### Heroku Settings [Heroku Login](https://dashboard.heroku.com/)
-
 
   Toolbelt Install [Download toolbelt with CLI](https://blog.heroku.com/the_heroku_toolbelt)
 
@@ -183,17 +182,17 @@
     $ heroku config:unset [name]
 
 
-### MongoDB
+### PART V MongoDB
 
 #### local run mongodb
 
-1.start db service
+  start db service
 
-    > mongod --dbpath ~/[mongo-data] 
+    $ mongod --dbpath ~/[mongo-data] 
 
-2.entry to db
+  entry to db
 
-    > mongo
+    $ mongo
 
 #### MongoDB Native Notes
 
@@ -222,8 +221,6 @@
     findOneAndUpdate & $inc, $set used.
 
 #### Mongoose Model
-
-
 
 ### thanks for references by
   [Andrew Mead GitHub](https://github.com/andrewjmead)
