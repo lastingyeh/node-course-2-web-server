@@ -4,3 +4,4 @@ docs/
 weather-app/
 server.log
 yarn.lock
+node-todo-api/server/config/config.json

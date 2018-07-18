@@ -73,81 +73,115 @@
 
   [Forecast io. : https://darksky.net](https://darksky.net/forecast)
 
-### git Initialize
+### Use Git
 
-    > git init
+  git init to project
 
-    > git status -> see files Status
+    $ git init
 
-    > git add package.json -> add files to git
+  show git files status
 
-    > git commit -m 'update message you defined' -> commit to git
+    $ git status 
 
-    > git push -> * push files to git
+  add files to git
 
-### ssh github
+    $ git add package.json 
 
-#### Terminal Create SSH Keys
+  commit & updated to git
 
-    ls -al ~/.ssh -> show ssh key info
+    $ git commit -m 'update message you defined'
 
-    ssh-keygen -t rsa -b 4096 -C 'your mail address' -> sign ssh keys
+  push files to git  
 
-    eval "$(ssh-agent -s)" -> show agent pid
+    $ git push
 
-    ssh-add ~/.ssh/id_rsa -> Identity added: /Users/xxx/.ssh/id_rsa (/Users/xxx/.ssh/id_rsa)
+### SSH Created By Github
 
-#### Login to your github account
+  show ssh key info
 
-  [Adding a new SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
+    $ ls -al ~/.ssh
 
-    go to https://github.com/settings/keys
+  sign ssh keys
 
-    create new ssh key
+    $ssh-keygen -t rsa -b 4096 -C [your mail address]
 
-    > pbcopy < ~/.ssh/id_rsa.pub -> generate key
+  show agent pid
 
-    paste to 'key' content after run above command
+    $ eval "$(ssh-agent -s)"
 
-    > ssh -T git@github.com -> view git account for use
+  Identity added: /Users/xxx/.ssh/id_rsa (/Users/xxx/.ssh/id_rsa)
 
-#### create repos
+    $ ssh-add ~/.ssh/id_rsa
 
-    create New repository
+#### Login to your github account [Adding a new SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
+
+  create new ssh key [go to githubkeys website](https://github.com/settings/keys)
+
+  generate key
+
+    $ pbcopy < ~/.ssh/id_rsa.pub
+
+  paste to 'key' content after run above command,  view git account for use
+
+    $ ssh -T git@github.com
+
+#### create repos (create New repository)
 
   [GitHub Index Page](https://github.com/)
 
-    owner / 'press repository name' > create
+  1. owner / 'press repository name' > create
 
-    …or push an existing repository from the command line
+  2. …or push an existing repository from the command line
 
-      git remote add origin https://github.com/xxx/your-project.git
+    $ git remote add origin https://github.com/xxx/your-project.git
     
-      git push -u origin master
+    $ git push -u origin master
 
-#### Heroku Settings
+#### Heroku Settings [Heroku Login](https://dashboard.heroku.com/)
 
-    Heroku Website
+
+  Toolbelt Install [Download toolbelt with CLI](https://blog.heroku.com/the_heroku_toolbelt)
+
+  See Helper 
     
-  [Heroku Login](https://dashboard.heroku.com/)
+    $ heroku --help
 
-    Toolbelt Install
+  login Heroku 
+  
+    $ heroku login 
 
-  [Download toolbelt with CLI](https://blog.heroku.com/the_heroku_toolbelt)
+  add keys to heroku 
+  
+    $ heroku keys:add
 
-    See Helper > heroku --help
+  check keys existed 
+  
+    $ heroku keys
 
-    login Heroku > heroku login 
+    $ ssh -v git@heroku.com
 
-    add keys to heroku > heroku keys:add
+    $ heroku create
 
-    check keys existed > heroku keys
+    $ git push heroku
 
-    > ssh -v git@heroku.com
+#### Set Heroku ENV
 
-    > heroku create
+  get configs
 
-    > git push heroku
+    $ heroku config
+
+  get config by name
+
+    $ heroku config:get [name]
+
+  set config by key-value
+
+    $ heroku config:set [name]=[value]
+
+  delete config by name
+
+    $ heroku config:unset [name]
+
 
 ### MongoDB
 
