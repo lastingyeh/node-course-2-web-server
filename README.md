@@ -1,8 +1,6 @@
 ### Weather API website
 
-  參考資料
-  
-    [Forecast io. : https://darksky.net](https://darksky.net/forecast)
+[Forecast io. : https://darksky.net](https://darksky.net/forecast)
 
 ---
 
@@ -235,5 +233,5 @@
 
 --- 
 
-### 參考資料
+### 參考資料
 [Andrew Mead GitHub](https://github.com/andrewjmead)
