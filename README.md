@@ -1,10 +1,10 @@
-### Weather API website
+### Weather API website
 
 [Forecast io. : https://darksky.net](https://darksky.net/forecast)
 
 ---
 
-### Git 使用
+### Git 使用
 
    git init to project
 
@@ -46,7 +46,7 @@
 
     $ ssh-add ~/.ssh/id_rsa
 
-* [login to github & Adding a new SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
+* [login to github & Adding a new SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
 
 * [go to githubkeys website & create new ssh key](https://github.com/settings/keys)
 
