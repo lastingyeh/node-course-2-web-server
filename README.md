@@ -160,6 +160,12 @@
     findOneAndUpdate & $inc, $set used.
 
 ---
+### Node-Chat-App
+
+1. browser顯示 socket.io.js
+
+    http://localhost:3000/socket.io/socket.io.js
+
 
 ### 其他補充
 
