@@ -2,6 +2,7 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io');
+const { generateMessage } = require('./utils/message');
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -13,21 +14,44 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 io.on('connection', socket => {
 	console.log('new user connected');
 
+	//#region newEmail example
 	// to client
-	socket.emit('newEmail', {
-		from: 'mike@example',
-		text: 'Hey. what is going on.',
-		createdAt: 123,
-	});
+	// socket.emit('newEmail', {
+	// 	from: 'mike@example',
+	// 	text: 'Hey. what is going on.',
+	// 	createdAt: 123,
+	// });
 
 	// from client
-	socket.on('createEmail', newEmail => {
-		console.log('createEmail', newEmail);
-	});
+	// socket.on('createEmail', newEmail => {
+	// 	console.log('createEmail', newEmail);
+	// });
+	//#endregion
 
-    // from client and to client
+	// from client and to client
+	socket.emit(
+		'newMessage',
+		generateMessage('Admin', 'Welcome to the chat app'),
+	);
+
+	socket.broadcast.emit(
+		'newMessage',
+		generateMessage('Admin', 'New user joined'),
+	);
+
 	socket.on('createMessage', function(message) {
-		socket.emit('newMessage', message);
+		// send all clients
+		// io.emit('newMessage', message);
+		console.log('createMessage', message);
+
+		io.emit('newMessage', generateMessage(message.from, message.text));
+
+		// use broadcast to emit all the other socket client.
+		// socket.broadcast.emit('newMessage', {
+		// 	from: message.from,
+		// 	text: message.text,
+		// 	createdAt: new Date().getTime(),
+		// });
 	});
 
 	socket.on('disconnect', () => {

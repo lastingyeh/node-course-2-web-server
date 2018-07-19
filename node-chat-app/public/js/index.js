@@ -10,7 +10,10 @@ socket.on('connect', function() {
 	});
 
 	// send message
-	socket.emit('createMessage', { from: 'cx', text: 'Hello, This is cx.' });
+    // socket.emit('createMessage', { from: 'cx', text: 'Hello, This is cx.' });
+    
+    // from admin text 'welcome to the chat app'
+    
 });
 
 socket.on('disconnect', function() {
