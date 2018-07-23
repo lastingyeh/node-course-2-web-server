@@ -10,13 +10,6 @@ describe('generateMessage', () => {
 
 		expect(typeof message.createdAt).toBe('number');
 		expect(message).toMatchObject({ from, text });
-		// store res in variable
-
-		// assert from match
-
-		// assert text match
-
-		// assert createdat is number
 	});
 });
 

@@ -44,8 +44,7 @@ io.on('connection', socket => {
 		// io.emit('newMessage', message);
 		console.log('createMessage', message);
 		io.emit('newMessage', generateMessage(message.from, message.text));
-
-		callback('This is from the server');
+		callback();
 
 		// use broadcast to emit all the other socket client.
 		// socket.broadcast.emit('newMessage', {
