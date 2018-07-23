@@ -66,10 +66,17 @@ io.on('connection', socket => {
 	});
 
 	socket.on('createMessage', (message, callback) => {
+		const user = users.getUser(socket.id);
+
+		if (user && isRealString(message.text)) {
+			io.to(user.room).emit(
+				'newMessage',
+				generateMessage(user.name, message.text),
+			);
+		}
 		// send all clients
 		// io.emit('newMessage', message);
 		// console.log('createMessage', message);
-		io.emit('newMessage', generateMessage(message.from, message.text));
 		callback();
 
 		// use broadcast to emit all the other socket client.
@@ -81,10 +88,18 @@ io.on('connection', socket => {
 	});
 
 	socket.on('createLocationMessage', coords => {
-		io.emit(
-			'newLocationMessage',
-			generateLocationMessage('Admin', coords.latitude, coords.longitude),
-		);
+		const user = users.getUser(socket.id);
+
+		if (user) {
+			io.to(user.room).emit(
+				'newLocationMessage',
+				generateLocationMessage(
+					user.name,
+					coords.latitude,
+					coords.longitude,
+				),
+			);
+		}
 	});
 
 	socket.on('disconnect', () => {
